@@ -4,9 +4,25 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://unpkg.com/tachyons@4.12.0/css/tachyons.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+  <script src="moment.min.js" defer></script>
+  <script src="script.js" defer></script>
   <title>Notes</title>
 </head>
 <body>
-  
+  <div class="container">
+    <h1>Notes...</h1>
+    <form id="noteapp">
+      <textarea name="myTextBox" cols="50" rows="5">
+      Enter some text...
+      </textarea>
+      <br />
+      <input type="submit" id="note-text"/>
+      </form>
+      <section id="allnotes">
+        <ul id="note-list"></ul>
+      </section>
+  </div>
 </body>
 </html>
