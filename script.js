@@ -62,7 +62,7 @@ function createNote(noteText) {
         })
     })
     .then(response => response.json())
-    .then(data => renderNoteItem(data))
+    .then(data => renderNoteItem(data.notes.body))
 }
 
 function deleteNote(element) {
