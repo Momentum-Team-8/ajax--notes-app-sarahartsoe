@@ -31,6 +31,7 @@ const noteList = document.querySelector('#note-list')
 form.addEventListener('submit', event => {
     event.preventDefault()
     const noteText = document.getElementById('note-text').value
+    console.log(noteText, "here is my note")
     createNote(noteText)
 })
 
@@ -62,7 +63,7 @@ function createNote(noteText) {
         })
     })
     .then(response => response.json())
-    .then(data => renderNoteItem(data.notes.body))
+    .then(data => renderNoteItem(data))
 }
 
 function deleteNote(element) {
@@ -100,5 +101,6 @@ function renderNoteItem(noteObj) {
 function renderNoteText(noteListItem, noteObj) {
     noteListItem.innerHTML = `<span class="dib w-60">${noteObj.body}</sp><i class="ml2 dark-red fas fa-times delete"></i><i class="ml3 fas fa-edit edit"></i>`
 }
+
 
 listNotes();
