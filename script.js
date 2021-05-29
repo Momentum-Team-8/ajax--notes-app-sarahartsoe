@@ -36,6 +36,7 @@ form.addEventListener('submit', event => {
 })
 
 noteList.addEventListener('click', event => {
+    event.preventDefault()
     if (event.target.classList.contains('delete')) {
         deleteNote(event.target)
     }
@@ -72,6 +73,14 @@ function deleteNote(element) {
         method: 'DELETE'
     }).then(() => element.parentElement.remove())
 }
+
+// tested below function for delete. not working
+// function deleteNote(element) {
+//     const noteId = element.parentElement.id
+//     fetch(url + "/" + `${noteId}`, {
+//         method: 'DELETE'
+//     }).then(response => response.json())
+// } 
 
 function updateNote(element) {
     const noteId = element.parentElement.id
