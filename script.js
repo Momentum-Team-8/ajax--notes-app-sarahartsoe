@@ -68,7 +68,7 @@ function createNote(noteText) {
 }
 
 function deleteNote(element) {
-    const noteId = element.parentElement.id
+    const noteId = element.parentElement.parentElement.id
     fetch(url + "/" + `${noteId}`, {
         method: 'DELETE'
     }).then(() => element.parentElement.remove())
